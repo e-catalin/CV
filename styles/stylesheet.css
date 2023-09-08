@@ -143,7 +143,7 @@ nav ul li a:hover::after {
 }
 
 
-.tabLinks.activeLink:hover::after {
+.tabLinks:hover::after {
     width: 100%;
 }
 
