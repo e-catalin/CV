@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <script src="https://kit.fontawesome.com/84464cc648.js" crossorigin="anonymous"></script>
+    <script src="CV/scripts/index.js" defer></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="headerText">
+                <p>Web Developer<br>Professional couch potato<br>Gamer</p>
+                <h1>Hello, I'm <span>Catalin</span> <br> and I procrastinate</h1>
+            </div>
+        </div>
+    </div>
+
+<!-- ----------------------------------- ABOUT ----------------------------------------- -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="aboutCol1">
+                    <img src="images/user.png" alt="User photo">
+                </div>
+                <div class="aboutCol2">
+                    <h1 class="subTitle"><span>About </span>me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officia, molestias perspiciatis nemo tenetur dolore eum tempora architecto ipsam quaerat doloribus
+                    accusantium eius quis quibusdam aperiam placeat quidem doloremque voluptas expedita.</p>
+
+                    <div class="tabTitle">
+                        <p class="tabLinks activeLink" onclick="opentab('skills')"><span>S</span>kills</p>
+                        <p class="tabLinks" onclick="opentab('experience')"><span>E</span>xperience</p>
+                        <p class="tabLinks" onclick="opentab('education')"><span>E</span>ducation</p>
+
+                    </div>
+                    <div class="tabContents activeTab" id="skills">
+                        <ul>
+                            <li><span>Web Developer</span><br>HTML, Javascript, CSS<br></li>
+                            <li><span>Scripting</span><br>Python, C#</li>
+                            <li><span>Gaming</span><br>CS:GO, LOL, Rocket League</li>
+                        </ul>
+                    </div>
+
+                    <div class="tabContents" id="experience">
+                        <ul>
+                            <li><span>KFC</span><br>Chicken boy<br></li>
+                            <li><span>Waiter</span><br>The fastest in the west</li>
+                            <li><span>Barman</span><br>Just water</li>
+                        </ul>
+                    </div>
+
+                    <div class="tabContents" id="education">
+                        <ul>
+                            <li><span>Homeless</span><br>Can count to 5<br></li>
+                            <li><span>EBSA</span><br>Sciences and Technologies</li>
+                            <li><span>Masters of Engineering</span><br>Computer Science</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------PORTFOLIO------------------------------------>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class=" portfolio subTitle"><span>Portfolio</span></h1>
+            <div class="workList">
+                <div class="work">
+                    <img src="images/item.png" alt="item">
+                    <div class="layer">
+                        <h3>Andoid Game</h3>
+                        <p>Final year project consisted of an Android and iOS game</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/item.png" alt="item">
+                    <div class="layer">
+                        <h3>Andoid Game</h3>
+                        <p>Final year project consisted of an Android and iOS game</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/item.png" alt="item">
+                    <div class="layer">
+                        <h3>Andoid Game</h3>
+                        <p>Final year project consisted of an Android and iOS game</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+<!-----------------------------------CONTACT------------------------------------>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contactLeft">
+                <h1 class="subTitle"><span>Contact</span> Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>catalin.dobinda2@gmail.com</p>
+                <div class="socialIcons">
+                    <a href="https://www.linkedin.com/in/catalin-dobinda-b0879a1b8/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/catalin_1337/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="images/cv.pdf" download class="btn2">Download CV</a>
+            </div>
+            <div class="contactRight">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="emai" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright© Catalin Dobinda. All rights reserved.</p>
+    </div>
+</div>
+
+
+
+    
+    <script>
+
+        let tabLinks = document.getElementsByClassName("tabLinks");
+        let tabContents = document.getElementsByClassName("tabContents");
+        
+        function opentab(tabname) {
+            for(tabLink of tabLinks) {
+                tabLink.classList.remove('activeLink');
+            }
+            for(tabContent of tabContents) {
+                tabContent.classList.remove('activeTab');
+            }
+            event.currentTarget.classList.add('activeLink');
+            document.getElementById(tabname).classList.add('activeTab')
+        }
+    </script>
+
+
+</body>
+</html>
