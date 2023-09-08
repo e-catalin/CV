@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #080808;
     color: #fff;
@@ -363,7 +367,7 @@ form .btn2 {
     margin-top: 20px;
 }
 
-/*------------------CSS FOR MOBILE-------------------------*/
+/*------------------CSS FOR MOBILE------------------------- TODO*/
 @media only screen and  (max-width: 600px) {
     #header {
         background-image: url('../images/bg.jpg');
@@ -375,5 +379,7 @@ form .btn2 {
     .headerText h1 {
         font-size: 30px;
     }
+
+/*TODO*/
 
 }

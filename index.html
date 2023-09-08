@@ -15,15 +15,15 @@
             <nav>
                 <img src="images/logo.png" class="logo">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="headerText">
-                <p>Web Developer<br>Professional couch potato<br>Gamer</p>
-                <h1>Hello, I'm <span>Catalin</span> <br> and I procrastinate</h1>
+                <p>Web Developer
+                <h1>Hello, I'm <span>Catalin</span></h1>
             </div>
         </div>
     </div>
@@ -38,9 +38,7 @@
                 </div>
                 <div class="aboutCol2">
                     <h1 class="subTitle"><span>About </span>me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officia, molestias perspiciatis nemo tenetur dolore eum tempora architecto ipsam quaerat doloribus
-                    accusantium eius quis quibusdam aperiam placeat quidem doloremque voluptas expedita.</p>
+                    <p>This is the about me section. TODO</p>
 
                     <div class="tabTitle">
                         <p class="tabLinks activeLink" onclick="opentab('skills')"><span>S</span>kills</p>
@@ -85,23 +83,23 @@
                     <img src="images/item.png" alt="item">
                     <div class="layer">
                         <h3>Andoid Game</h3>
-                        <p>Final year project consisted of an Android and iOS game</p>
+                        <p>Final year project consisted of an Android and iOS game.</p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/item.png" alt="item">
                     <div class="layer">
-                        <h3>Andoid Game</h3>
-                        <p>Final year project consisted of an Android and iOS game</p>
+                        <h3>Web development</h3>
+                        <p>Portfolio website.</p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/item.png" alt="item">
                     <div class="layer">
-                        <h3>Andoid Game</h3>
-                        <p>Final year project consisted of an Android and iOS game</p>
+                        <h3>Scripting</h3>
+                        <p>Python scripting to cheat in offline videogames.</p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -123,9 +121,9 @@
                 <a href="images/cv.pdf" download class="btn2">Download CV</a>
             </div>
             <div class="contactRight">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="emai" placeholder="Your Email" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn2">Submit</button>
                 </form>
@@ -156,7 +154,18 @@
             document.getElementById(tabname).classList.add('activeTab')
         }
     </script>
-
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxU05yKTEnFUHZK3Ir4nKZCHOxWU1TzgCpsNqmsLMM6SG7ee9s998p8uPfGXIQ9VaHC/exec'
+        const form = document.forms['submit-to-google-sheet']
+        
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+            
+        })
+      </script>
 
 </body>
 </html>
