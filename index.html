@@ -121,7 +121,7 @@
                 <a href="images/cv.pdf" download class="btn2">Download CV</a>
             </div>
             <div class="contactRight">
-                <form name="submit-to-google-sheet">
+                <form action="https://sheetdb.io/api/v1/agbjpn68kiumt" method="post" id="sheetdb-form">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -155,17 +155,21 @@
         }
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxU05yKTEnFUHZK3Ir4nKZCHOxWU1TzgCpsNqmsLMM6SG7ee9s998p8uPfGXIQ9VaHC/exec'
-        const form = document.forms['submit-to-google-sheet']
+        let form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("sheetdb-form")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
         
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message))
-            
-        })
-      </script>
+
+      });
+    });
+    </script>
 
 </body>
 </html>
