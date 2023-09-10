@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
           method : "POST",
           body: new FormData(document.getElementById("sheetdb-form"))
       }).then(response => {
-        message.innerHTML = 'Success! You message has been sent.'
+        message.innerHTML = 'Success! Your message has been sent.'
         setTimeout(function(){
             message.innerHTML =''
         },5000)
