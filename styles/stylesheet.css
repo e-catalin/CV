@@ -307,7 +307,6 @@ nav ul li a:hover::after {
 
 }
 
-
 .subTitle span{
     color: rgb(0, 210, 255);
     font-weight: bolder;
@@ -367,6 +366,15 @@ form .btn2 {
     margin-top: 20px;
 }
 
+#message {
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+    font-weight: bolder;
+
+}
+
+
 /*------------------CSS FOR MOBILE------------------------- TODO*/
 @media only screen and  (max-width: 600px) {
     #header {
@@ -380,16 +388,16 @@ form .btn2 {
         font-size: 30px;
     }
 
-/*TODO
 
-Separate JS from HTML
+/*TODO
 Create more HTML pages for other projects in portfolio
 Create individual project page
-Try to fix the query system
-Refactor file names (index.html -> homepage.html)
+Create Files folder (CV etc...)
 Get better images to use as placeholders
-
+Dabble in paralax
+Start developing own API
 */
 
 
 }
+
