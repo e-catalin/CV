@@ -1,6 +1,8 @@
 let tabLinks = document.getElementsByClassName("tabLinks");
 let tabContents = document.getElementsByClassName("tabContents");
 
+
+
 function opentab(tabname, event) {
     for (tabLink of tabLinks) {
         tabLink.classList.remove('activeLink');
@@ -10,6 +12,18 @@ function opentab(tabname, event) {
     }
     event.currentTarget.classList.add('activeLink');
     document.getElementById(tabname).classList.add('activeTab');
+}
+
+
+let sideMenu = document.getElementById("sideMenu")
+
+function openMenu() {
+    sideMenu.style.right = "0";
+}
+
+function closeMenu() {
+    sideMenu.style.right = "-200px";
+    
 }
 
 
@@ -42,5 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log('ERROR!', error);
           })
     });
+
+    
         
 });
