@@ -42,8 +42,5 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log('ERROR!', error);
           })
     });
-
-
-    
         
 });
