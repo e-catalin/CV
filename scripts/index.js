@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function(){
            
             const selectedProjects = [];
 
-            
             projectIndexesToSelect.forEach(index => {
                 if (index >= 0 && index < projects.length) {
                     selectedProjects.push(projects[index]);
