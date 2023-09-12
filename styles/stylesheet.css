@@ -63,6 +63,7 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+    
 }
 
 .headerText {
@@ -151,6 +152,7 @@ nav ul li a:hover::after {
 
 .tabLinks:hover::after {
     width: 100%;
+    
 }
 
 
@@ -270,7 +272,9 @@ nav ul li a:hover::after {
     color: white;
     font-weight: bolder;
     transition: background 0.4s;
+    transition: scale 1;
     transition: 0.5s;
+    
 }
 
 .btn:hover {
@@ -368,6 +372,7 @@ nav ul li a:hover::after {
     background-color: rgb(0, 210, 255);
     color: white;
     scale: 1.1;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .contactRight form {
