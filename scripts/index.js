@@ -1,7 +1,8 @@
+
+
+//-------------------------- About me --------------------------
 let tabLinks = document.getElementsByClassName("tabLinks");
 let tabContents = document.getElementsByClassName("tabContents");
-
-
 
 function opentab(tabname, event) {
     for (tabLink of tabLinks) {
@@ -14,8 +15,8 @@ function opentab(tabname, event) {
     document.getElementById(tabname).classList.add('activeTab');
 }
 
-
-let menu = document.querySelector(".sideMenu"); // Replace with the correct class name
+//-------------------------- Side menu --------------------------
+let menu = document.querySelector(".sideMenu");
 let checkbox = document.querySelector(".checkbox")
 let isMenuOpen = false;
 
@@ -52,7 +53,7 @@ function closeMenu() {
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    
+    //-------------------------- Form --------------------------
     let form = document.getElementById('sheetdb-form');
     const message= document.getElementById("message");
     
