@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
 *{
     margin: 0px;
     padding: 0px;
@@ -416,15 +419,19 @@ form .btn2 {
     font-weight: bolder;
 
 }
+.nav-container .checkbox {
+    display: none;
+}
+
 
 
 /*------------------CSS FOR MOBILE------------------------- TODO*/
 
-nav .fas {
-    display: none;
-}
+
 
 @media only screen and  (max-width: 600px) {
+
+    
     
     #header {
         background-image: url('../images/bg.jpg');
@@ -437,33 +444,10 @@ nav .fas {
     .headerText h1 {
         font-size: 30px;
     }
-    nav .fas {
-        display: block;
-        font-size: 25px;
-    }
 
-    nav ul {
-        background: rgb(0, 210, 255);
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.5s;
-    }
     nav ul li {
         display: block;
         margin: 25px;
-    }
-
-    nav ul .fas {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-
     }
 
     .subTitle {
@@ -494,18 +478,105 @@ nav .fas {
     .copyright {
         font-size: 14px;
     }
+    .nav-container .checkbox {
+      position: absolute;
+      display: block;
+      height: 48px;
+      width: 48px;
+      top: 20px;
+      right: 20px;
+      z-index: 5;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .nav-container .hamburger-lines {
+      display: block;
+      height: 39px;
+      width: 48px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+    
+    .nav-container .hamburger-lines .line {
+      display: block;
+      height: 8px;
+      width: 100%;
+      border-radius: 10px;
+      background: white;
+      z-index: 10;
+    }
+    .nav-container .hamburger-lines .line1 {
+      transform-origin: 100% 0%;
+      transition: transform 0.4s ease-in-out;
+      z-index: 10;
+    }
+    
+    .nav-container .hamburger-lines .line2 {
+      transition: transform 0.2s ease-in-out;
+      z-index: 10;
+      background: rgb(0, 210, 255);
+    }
+    
+    .nav-container .hamburger-lines .line3 {
+      transform-origin: 100% 100%;
+      transition: transform 0.4s ease-in-out;
+      z-index: 10;
+    }
+
+    
+    
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+        transform: rotate(-45deg);
+        
+    }
+      
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+        transform: scaleY(0);
+        
+    }
+      
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+        transform: rotate(45deg);
+        background: rgb(0, 210, 255);
+        
+        
+    }
+.nav-container > ul {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: rgba(0, 210, 255, 0.5);
+    position: fixed;
+    top: 0px;
+    bottom: 50px;
+    right: -200px;
+    width: 200px;
+    height: 50%;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+    border: 3px solid rgba(0, 210, 255, 1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.nav-container > ul > li {
+    font-weight: bolder;
+    padding: 5px;
+}
 
 
+.checkbox:checked ~ .nav-container > ul {
+    right: 0;
+}
 
 /*TODO
-Create more HTML pages for other projects in portfolio
 Create individual project page
-Create Files folder (CV etc...)
-Get better images to use as placeholders
 Dabble in paralax
 Start developing own API
 */
-
-
 }
 
