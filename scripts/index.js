@@ -15,16 +15,39 @@ function opentab(tabname, event) {
 }
 
 
-let sideMenu = document.getElementById("sideMenu")
+let menu = document.querySelector(".sideMenu"); // Replace with the correct class name
+let checkbox = document.querySelector(".checkbox")
+let isMenuOpen = false;
+
+function toggleMenu() {
+    if (isMenuOpen) {
+        
+        closeMenu();
+        console.log("DEBUGGING: Menu Closed");
+        
+    } else {
+        openMenu();
+        console.log("DEBUGGING: Menu Opened");
+    }
+    
+
+}
 
 function openMenu() {
-    sideMenu.style.right = "0";
+    menu.style.right = "0";
+    isMenuOpen = true;
+    console.log("Menu state: " + isMenuOpen);
+    checkbox.checked = true;
+}
+function closeMenu() {
+    menu.style.right = "-200px";
+    isMenuOpen = false;
+    console.log("Menu state: " + isMenuOpen);
+    checkbox.checked = false;
 }
 
-function closeMenu() {
-    sideMenu.style.right = "-200px";
-    
-}
+
+
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -57,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function(){
           })
     });
 
+    
     
         
 });

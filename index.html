@@ -12,27 +12,38 @@
     <script src="scripts\index.js" defer></script>
 </head>
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="" class="logo">
-                <ul id="sideMenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-solid fa-xmark" onclick="closeMenu()"></i>
-                </ul>
-                <i class="fas fa-solid fa-bars" onclick="openMenu()"></i>
-            </nav>
-            <div class="headerText">
-                <p>Web Developer
-                <h1>Hello, I'm <span>Catalin</span></h1>
-                <h1>---IN DEVELOPMENT (11/09/23)---<span></span></h1>
-                <h3>---Images are all placeholders---<span></span></h3>
+    <div class="wrapper">
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="" class="logo">
+                    <div class="nav-container">
+                        <input class="checkbox" type="checkbox" name="" id="checkbox" onclick="toggleMenu()"/>
+                        <label for="checkbox" class="hamburger-lines">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </label>
+                        <ul class="sideMenu" >
+                            <li><a href="#header" onclick="toggleMenu()">Home</a></li>
+                            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                            <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
+                            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="headerText">
+                    <p>Web Developer
+                    <h1>Hello, I'm <span>Catalin</span></h1>
+                    <h1>---IN DEVELOPMENT (11/09/23)---<span></span></h1>
+                    <h3>---Images are all placeholders---<span></span></h3>
+                </div>
             </div>
         </div>
     </div>
+    
+    
+    
 
 <!------------------------------ ABOUT ------------------------------>
 
