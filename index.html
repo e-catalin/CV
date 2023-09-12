@@ -10,7 +10,6 @@
     <!--Used for social media icons-->
     <script src="https://kit.fontawesome.com/84464cc648.js" crossorigin="anonymous"></script>
     <script src="scripts\index.js" defer></script>
-    <script src="scripts\portfolio-getter.js" defer></script>
 </head>
 <body>
     <div id="header">
@@ -84,8 +83,33 @@
             <h1 class="portfolio subTitle"><span1>My </span1><span>Portfolio </span></h1>
             <h3>---TODO---</h3>
             <div class="workList">
-                 <!-- This is the highlighted section of the portfolio.
-                      This is controlled by a script in the index.js file. -->
+                <div class="work">
+                    <img src="images/item.png" class="portfolioItem" alt="item">
+                    <div class="layer">
+                        <h3>Discord Bot</h3>
+                        <p>Developed in python, I created a discord bot for non-comercial use.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/item.png" class="portfolioItem" alt="item">
+                    <div class="layer">
+                        <h3>Portfolio Website</h3>
+                        <p>This website is my pride and joy when it comes to web development.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/item.png" class="portfolioItem" alt="item">
+                    <div class="layer">
+                        <h3>Machine Learning Algorithm</h3>
+                        <p>Used an ML algorithm to predict the best moments to create database backups as part of a 
+                            "Fault-tolerance and disaster recovery in distributed database systems" coursework.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
             </div>
             <a href="more-Projects.html" class="btn" >See more</a>
         </div>
@@ -121,43 +145,6 @@
     </div>
 </div>
 
-<script>
-    // Define an array of project indexes you want to select
-const projectIndexesToSelect = [5, 1, 4]; // Replace with the indexes you want to select
-
-// Fetch the content of "more-projects.html"
-fetch('more-projects.html')
-    .then(response => response.text()) // Get the HTML content as text
-    .then(html => {
-        // Create a temporary element to parse the HTML
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = html;
-
-        // Extract the project information from "more-projects.html"
-        const projects = tempDiv.querySelectorAll('.work');
-
-        // Create an array to store the selected projects
-        const selectedProjects = [];
-
-        // Iterate through the project indexes and select the corresponding projects
-        projectIndexesToSelect.forEach(index => {
-            if (index >= 0 && index < projects.length) {
-                selectedProjects.push(projects[index]);
-            }
-        });
-
-        // Insert the selected projects into the "portfolio" section
-        const portfolioSection = document.getElementById('portfolio');
-        const workList = portfolioSection.querySelector('.workList');
-        selectedProjects.forEach(project => {
-            workList.appendChild(project);
-        });
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-
-</script>
 
 </body>
 </html>
