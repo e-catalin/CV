@@ -432,10 +432,14 @@ form .btn2 {
 @media only screen and  (max-width: 600px) {
 
     
-    
+
     #header {
+        position: sticky;
+        top: 0;
         background-image: url('../images/bg.jpg');
         size: 100%;
+        z-index: 1000; /* Adjust the z-index to ensure it stays on top */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
     }
     .headerText {
         margin-top: 100%;
@@ -490,10 +494,11 @@ form .btn2 {
       cursor: pointer;
     }
     .nav-container .hamburger-lines {
+      position: sticky;
       display: block;
       height: 39px;
       width: 48px;
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
       z-index: 2;
@@ -515,6 +520,7 @@ form .btn2 {
       transform-origin: 100% 0%;
       transition: transform 0.4s ease-in-out;
       z-index: 10;
+      
     }
     
     .nav-container .hamburger-lines .line2 {
@@ -533,6 +539,7 @@ form .btn2 {
     
     .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
         transform: rotate(-45deg);
+        
         
     }
       
@@ -563,6 +570,7 @@ form .btn2 {
     border: 3px solid rgba(0, 210, 255, 1);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 .nav-container > ul > li {
     font-weight: bolder;
     padding: 5px;

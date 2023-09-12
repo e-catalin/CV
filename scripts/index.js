@@ -29,7 +29,10 @@ function toggleMenu() {
         openMenu();
         console.log("DEBUGGING: Menu Opened");
     }
+    
+
 }
+
 function openMenu() {
     menu.style.right = "0";
     isMenuOpen = true;
@@ -42,6 +45,8 @@ function closeMenu() {
     console.log("Menu state: " + isMenuOpen);
     checkbox.checked = false;
 }
+
+
 
 
 
