@@ -122,7 +122,41 @@
 </div>
 
 <script>
-    
+    // Define an array of project indexes you want to select
+const projectIndexesToSelect = [5, 1, 4]; // Replace with the indexes you want to select
+
+// Fetch the content of "more-projects.html"
+fetch('more-projects.html')
+    .then(response => response.text()) // Get the HTML content as text
+    .then(html => {
+        // Create a temporary element to parse the HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+
+        // Extract the project information from "more-projects.html"
+        const projects = tempDiv.querySelectorAll('.work');
+
+        // Create an array to store the selected projects
+        const selectedProjects = [];
+
+        // Iterate through the project indexes and select the corresponding projects
+        projectIndexesToSelect.forEach(index => {
+            if (index >= 0 && index < projects.length) {
+                selectedProjects.push(projects[index]);
+            }
+        });
+
+        // Insert the selected projects into the "portfolio" section
+        const portfolioSection = document.getElementById('portfolio');
+        const workList = portfolioSection.querySelector('.workList');
+        selectedProjects.forEach(project => {
+            workList.appendChild(project);
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
 </script>
 
 </body>
