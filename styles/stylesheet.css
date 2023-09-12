@@ -419,9 +419,16 @@ form .btn2 {
 
 
 /*------------------CSS FOR MOBILE------------------------- TODO*/
+
+nav .fas {
+    display: none;
+}
+
 @media only screen and  (max-width: 600px) {
+    
     #header {
         background-image: url('../images/bg.jpg');
+        size: 100%;
     }
     .headerText {
         margin-top: 100%;
@@ -430,6 +437,64 @@ form .btn2 {
     .headerText h1 {
         font-size: 30px;
     }
+    nav .fas {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: rgb(0, 210, 255);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fas {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+
+    }
+
+    .subTitle {
+        font-size: 40px;
+    }
+    
+    .aboutCol1, .aboutCol2 {
+        flex-basis: 100%;
+    }
+
+    .aboutCol1 {
+        margin-bottom: 30px;
+    }
+
+    .aboutCol2 {
+        font-size: 14px;
+    }
+
+    .tabLinks {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    .contactLeft, .contactRight {
+        flex-basis: 100%;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+
 
 
 /*TODO
